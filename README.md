@@ -4,7 +4,8 @@
 
 - ### Links and Tutorials
 
-  - Using flask HTML templates - https://www.tutorialspoint.com/flask/flask_templates.htm
+  - Overall tutorial - https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination
+  - Using flask HTML templates -https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
     - Jinga2 template engine
 
 - ### Python

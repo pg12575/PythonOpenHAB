@@ -3,19 +3,19 @@
 {% block content %}
     <header><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     </header>
-    <div class="welcome">Welcome</div>
-    <div align="center">
-        <h1>Please enter participant ID to begin</h1>
-        <form action="" method="POST">
+    <div id="hcontent" class="welcome">Welcome</div>
+    <div id="hcontent" align="center">
+        <h1 id="hcontent">Please enter participant ID to begin</h1>
+        <form id="hcontent" action="" method="POST">
             {{ form.hidden_tag() }}
             <p>
             {{ form.ID.label }}
-            {{ form.ID(size=5) }}<br>
+            {{ form.ID(size=32) }}<br>
             {% for error in form.ID.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
             </p>
-            <p>{{ form.submit( onclick="$('#loading').show()" ) }}</p>
+            <p>{{ form.submit( onclick="return confirm('Is your Participant ID is correct?')" ) }}</p>
             
         </form>
         <div id="loading" style="display:none;"><img src="loading.gif" alt="" />Loading!</div>

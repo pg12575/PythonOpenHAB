@@ -1,3 +1,6 @@
+body {  font-family: Arial, Helvetica, sans-serif;
+}
+
 .h1{
   font-size: 50px;
 }
@@ -73,7 +76,10 @@
 }
 
 .App-intro {
+  padding-top: 10%;
   font-size: large;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .taskbutton1 {
@@ -113,7 +119,7 @@
 .instructions {
 
   font-size: 30px;
-  margin-top:-50px;
+  padding: top 50%;
   margin-left:10px;
   margin-right:10px;
   
@@ -128,6 +134,8 @@
 
 .currentStep {
   position: relative;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
   transform: translateY(-50%);
   color: rgb(47, 114, 47); 
@@ -151,6 +159,7 @@
   padding-left:50px;
   background-color: rgb(189, 189, 189); 
   border-radius: 30px;
+  font-family: Arial, Helvetica, sans-serif;
 
   opacity: 0;
  
@@ -169,7 +178,7 @@
   padding-top:1px;
   padding-left:40px;
   color:grey;
-
+  font-family: Arial, Helvetica, sans-serif;
   opacity: 0;  
   -webkit-animation: fade 2s forwards;
   -webkit-animation-delay: 1s;
@@ -178,9 +187,12 @@
 }
 
 .stepimg{
+  display:block;
   width:80%;
   opacity: 0;
   padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-animation: fade 2s forwards;
   -webkit-animation-iteration-count: 1; 
   -webkit-animation-delay: 2s;

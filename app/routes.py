@@ -1,24 +1,23 @@
-from flask import render_template, flash, redirect
+import time
+from flask import render_template, flash, redirect, url_for
 from app import app
-from app.forms import LoginForm
+from app.forms import IDForm
+import simplejson as json
 
-@app.route('/')
-@app.route('/index')
+
+@app.route('/loader')
+def loader():
+    return render_template('loader.html', title='Loading')
+    
+@app.route('/',  methods=['GET', 'POST'])
+@app.route('/index',  methods=['GET', 'POST'])
 def index():
-    user = {'username': 'Miguel'}
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
-    return render_template('index.html', title='Home', user=user, posts=posts)
+    form = IDForm()
+    if form.validate_on_submit():
+        flash('Participant ID entered: {}'.format(form.ID.data))
+        with open('file.json', 'w') as f:
+            json.dump(form.ID.data, f)
+        return redirect(url_for('loader'))
+    return render_template('index.html', title='Home', form=form)
 
-@app.route('/login')
-def login():
-    form = LoginForm()
-    return render_template('login.html', title='Sign In', form=form)
+

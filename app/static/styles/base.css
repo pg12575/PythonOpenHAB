@@ -1,0 +1,255 @@
+.h1{
+  font-size: 50px;
+}
+
+.App {
+  text-align: center;
+}
+
+.welcome {
+  font-size:100px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+#loader .App-loading {
+  border: 1.7vw solid rgb(91, 109, 124);
+  border-radius: 50%;
+  border-top: 1.7vw solid #221e5aff;
+  width: 15%;
+  height: auto;
+  padding-top: 15%;
+  -webkit-animation: spin 5s linear infinite;  
+  animation: spin 5s linear infinite;
+  position: center;
+}
+
+.App-logo {
+  background: url('./brllogoblue.png') center no-repeat;
+  background-size:10%;
+  position: relative;
+  transform: translateY(20%);
+}
+
+.App-uwe-logo {
+  height: 10%;
+  left:0.4%;
+  top:1%;
+  padding:1px;
+  position: absolute;
+}
+
+.App-uob-logo {
+  height: 6%;
+  left:6%;
+  top:2.3%;
+  padding-left:10px;
+  
+  position: absolute;
+}
+
+.App-brl-logo {
+  height: 7%;
+  right:1.2%;
+  top:2%;
+  position: absolute;
+}
+
+.App-header {
+  background-color: rgb(91, 109, 124);
+  height: 6vw;
+  padding: 20px;
+  padding-bottom: 0px;
+  color: white;
+}
+
+
+.App-title {
+  padding-top:0%;
+  font-size: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.taskbutton1 {
+  background-color: #008CBA;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 2% 10%;
+  margin: 10%;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.taskbutton2 {
+  background-color: rgb(66, 173, 98);
+  font-weight: bold;  
+  font-size: 24px;
+  padding: 2% 10%;
+  margin: 10%;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.taskbutton1:hover{
+  background-color: #221e5aff; 
+  color: white;
+}
+
+.taskbutton2:hover{
+  background-color: #221e5aff; 
+  color: white;
+}
+
+
+
+.instructions {
+
+  font-size: 30px;
+  margin-top:-50px;
+  margin-left:10px;
+  margin-right:10px;
+  
+}
+
+.location {
+  opacity: 0;  
+  -webkit-animation: fade 2s;
+  -webkit-animation-iteration-count: 1; 
+  opacity: 1;
+}
+
+.currentStep {
+  position: relative;
+  padding: 10px;
+  transform: translateY(-50%);
+  color: rgb(47, 114, 47); 
+  font-weight: 900; 
+  font-size: 50px;
+  opacity: 0;
+  -webkit-animation: pulsate 1s linear forwards;
+  -webkit-animation-iteration-count: 2; 
+  -webkit-animation-delay: 2s;
+ 
+  
+  
+}
+
+.steps  {
+  height: 220px;
+  margin: 0 auto;
+  width: 80%;
+  padding:10px;
+  padding-top:1px;
+  padding-left:50px;
+  background-color: rgb(189, 189, 189); 
+  border-radius: 30px;
+
+  opacity: 0;
+ 
+  -webkit-animation: fade 2s forwards;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1; 
+ 
+
+  
+}
+
+.oldSteps{
+  height:100px;
+  margin: 0 auto;
+  width: 80%;
+  padding-top:1px;
+  padding-left:40px;
+  color:grey;
+
+  opacity: 0;  
+  -webkit-animation: fade 2s forwards;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1; 
+
+}
+
+.stepimg{
+  width:80%;
+  opacity: 0;
+  padding: 10px;
+  -webkit-animation: fade 2s forwards;
+  -webkit-animation-iteration-count: 1; 
+  -webkit-animation-delay: 2s;
+  
+
+  
+ 
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {  
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes pulsate {
+  0% { 
+      
+      font-size: 50px;
+      opacity: 1;
+  }
+  50% { 
+     
+      font-size: 60px;
+      opacity: 1;
+  }
+  100% { 
+     
+      font-size: 50px;
+      opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes fade {
+  0% { 
+      
+      opacity:0;
+  }
+  
+  100% { 
+     
+      opacity:1;
+  }
+}
+
+
+
+#loader {
+  z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
+}
+
+#content {
+  margin: 0 auto;
+  padding-top: 20px;
+  display:none;
+
+}
+
+#TaskSelector {
+  display:none;
+}
+
+#taska {
+  display: none;
+}
+
+

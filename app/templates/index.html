@@ -1,8 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    <header><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    </header>
+    <div class="welcome">Welcome</div>
+    <div align="center">
+        <h1>Please enter participant ID to begin</h1>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <p>
+            {{ form.ID.label }}
+            {{ form.ID(size=5) }}<br>
+            {% for error in form.ID.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
+            <p>{{ form.submit( onclick="$('#loading').show()" ) }}</p>
+            
+        </form>
+        <div id="loading" style="display:none;"><img src="loading.gif" alt="" />Loading!</div>
+
+    </div>
 {% endblock %}

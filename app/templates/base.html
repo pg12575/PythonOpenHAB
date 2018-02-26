@@ -1,14 +1,36 @@
 <html>
     <head>
-      {% if title %}
-      <title>{{ title }} - Microblog</title>
-      {% else %}
-      <title>Welcome to Microblog</title>
-      {% endif %}
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/base.css') }}" />
+
+        {% if title %}
+        <title>{{ title }} - BRL</title>
+        {% else %}
+        <title>BRL</title>
+        {% endif %}
     </head>
     <body>
-        <div>Microblog: <a href="/index">Home</a><a href="/login">Login</a></div>
-        <hr>
+        <div class="App">
+            <header class="App-header">
+                <img src="/static/brlfullwhite.png" class="App-brl-logo" alt='BRL Logo' />
+                <img src="/static/uwelogo.png" class="App-uwe-logo" />
+                <img src=/static/uoblogo.png class="App-uob-logo" />
+                <h1 class="App-title">Assisted Living Studio</h1>
+
+            </header>
+
+
+
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
         {% block content %}{% endblock %}
     </body>
 </html>

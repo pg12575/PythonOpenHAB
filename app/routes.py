@@ -31,6 +31,7 @@ def taskselect():
     if form.validate_on_submit():
         if form.submit1.data:
             return render_template('TaskA.html', title='Task A', currStep="do something")
+            
         elif form.submit2.data:
             return "Done B"
     return render_template('taskselect.html', title='Tasks', form=form)
@@ -43,4 +44,4 @@ def TaskA():
 
 @socketio.on('message')
 def value_changed(message):
-    print("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw")
+    socketio.emit('message', message)

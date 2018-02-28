@@ -4,7 +4,7 @@ from app import socketio
 
 
 def sendMes(): 
-    socketio.emit('change_text', {'data': 'works'})
+    socketio.emit('message', {'data': 'works'})
     socketio.sleep(0)
     #socketio.on('myevent')
     return 
@@ -20,3 +20,7 @@ def checkSTATE():
         return 1
     else:
         return 0
+
+def dummy():
+
+    return 1

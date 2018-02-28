@@ -7,6 +7,14 @@
         {% else %}
         <title>BRL</title>
         {% endif %}
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket = io.connect('http://localhost:5000');
+            console.log(socket.connected);
+            socket.on('connect', function() {
+                socket.emit('message', {data: 'I\'m connected!'});
+            });
+        </script>
     </head>
     <body>
         <div class="App">
@@ -14,7 +22,7 @@
                 <img src="/static/brlfullwhite.png" class="App-brl-logo" alt='BRL Logo' />
                 <img src="/static/uwelogo.png" class="App-uwe-logo" />
                 <img src=/static/uoblogo.png class="App-uob-logo" />
-                <h1 class="App-title">Assisted Living Studio</h1>
+                <h1 class="App-title">Assisted Living Studio</h1> <h2 id='sample'></h2>
 
             </header>
 

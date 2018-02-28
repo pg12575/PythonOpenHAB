@@ -43,9 +43,9 @@ def TaskA():
     return render_template('TaskA.html', title='Task A')
 
 @socketio.on('messagecs')
-def value_changed(messagecs):
+def currStepMes(messagecs):
     socketio.emit('messagecs', messagecs)
 
 @socketio.on('messageps')
-def value_changed(messageps):
+def prevStepMes(messageps):
     socketio.emit('messageps', messageps)

@@ -7,21 +7,26 @@
         {% else %}
         <title>BRL</title>
         {% endif %}
+
+
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>    
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
         <script type="text/javascript" charset="utf-8">
             var socket = io.connect('http://localhost:5000');           
-                
+            var i = 0;     
+
             socket.on('messagecs', function(messagecs) {
                 //console.log(messagecs);
                 $('#currStep').text(messagecs);
-                $('#currStep').replaceWith($('#currStep').clone('#currStep')); })
-
+                $('#currStep').replaceWith($('#currStep').clone('#currStep')); i=i+1; $("#stepimg").attr("src", "/static/" + i.toString()+".png"); })
+                         
             socket.on('messageps', function(messageps) {
                 //console.log(messageps);
                 $('#prevStep').text(messageps); })
 
         </script>
+
+
     </head>
     <body>
         <div class="App">

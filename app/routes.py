@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, url_for, request
 
 from time import sleep                                                                                                                                                                         
 
-from app import app, oHAB, socketio
+from app import app, socketio
 from app.forms import IDForm, Tasker
 
 import simplejson as json
@@ -42,6 +42,10 @@ def taskselect():
 def TaskA():
     return render_template('TaskA.html', title='Task A')
 
-@socketio.on('message')
-def value_changed(message):
-    socketio.emit('message', message)
+@socketio.on('messagecs')
+def value_changed(messagecs):
+    socketio.emit('messagecs', messagecs)
+
+@socketio.on('messageps')
+def value_changed(messageps):
+    socketio.emit('messageps', messageps)

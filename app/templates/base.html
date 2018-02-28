@@ -12,10 +12,15 @@
         <script type="text/javascript" charset="utf-8">
             var socket = io.connect('http://localhost:5000');           
                 
-            socket.on('message', function(message) {
-                console.log(message);
-                $('#sample').text(message)
-    })           
+            socket.on('messagecs', function(messagecs) {
+                //console.log(messagecs);
+                $('#currStep').text(messagecs);
+                $('#currStep').replaceWith($('#currStep').clone('#currStep')); })
+
+            socket.on('messageps', function(messageps) {
+                //console.log(messageps);
+                $('#prevStep').text(messageps); })
+
         </script>
     </head>
     <body>
@@ -23,7 +28,7 @@
             <header class="App-header">
                 <img src="/static/brlfullwhite.png" class="App-brl-logo" alt='BRL Logo' />
                 <img src="/static/uwelogo.png" class="App-uwe-logo" />
-                <img src=/static/uoblogo.png class="App-uob-logo" />
+                <img src="/static/uoblogo.png" class="App-uob-logo" />
                 <h1 class="App-title">Assisted Living Studio</h1>
 
             </header>

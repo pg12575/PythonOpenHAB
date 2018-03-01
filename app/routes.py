@@ -31,7 +31,7 @@ def taskselect():
             return render_template('TaskA.html', title='Task A', currStep="do something")
             
         elif form.submit2.data:
-            return "Done B"
+            return render_template('TaskB.html', title='Task A', currStep="do something")
     return render_template('taskselect.html', title='Tasks', form=form)
  
 @socketio.on('messagecs')
@@ -48,4 +48,11 @@ def rund(rundummy):
     print('rundummy')
     
     _thread.start_new_thread(oHAB.dummy, ())
+
+@socketio.on('rundummy2')
+def rund(rundummy2):
+    sleep(1)
+    print('rundummy2')
+    
+    _thread.start_new_thread(oHAB.dummy2, ())
 

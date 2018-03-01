@@ -18,7 +18,7 @@ def checkSTATE():
 
 def dummy():
     with SocketIO('http://localhost', 5000, LoggingNamespace) as socketIO:  
-      
+       
         socketIO.emit('messagecs','Take plate from left cupboard')
         sleep(7)
         socketIO.emit('messageps','Previous Step: Take plate from left cupboard')
@@ -28,7 +28,3 @@ def dummy():
         socketIO.emit('messagecs','Take butter from fridge') 
 
     return 1
-
-
-socketIO = SocketIO('localhost', 5000, LoggingNamespace)
-socketIO.on('task', dummy)

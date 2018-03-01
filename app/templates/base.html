@@ -14,16 +14,31 @@
         <script type="text/javascript" charset="utf-8">
             var socket = io.connect('http://localhost:5000');           
             var i = 0;     
+            var mv = 10;
+            mvold = mv;
+            function move() {
+			  var elem = document.getElementById("myBar");   
+			  var width = mvold;
+			  var id = setInterval(frame, 10);
+			  function frame() {
+				if (width >= mv) {
+				  clearInterval(id);
+				} else {
+				  width=width+5; 
+				  elem.style.width = width + '%'; 
+				}
+			  }
+			}
 
-            socket.on('messagecs', function(messagecs) {
+            socket.on('messagecs', function(messagecs) { 
                 //console.log(messagecs);
                 $('#currStep').text(messagecs);
-                $('#currStep').replaceWith($('#currStep').clone('#currStep')); i=i+1; $("#stepimg").attr("src", "/static/" + i.toString()+".png"); })
+                $('#currStep').replaceWith($('#currStep').clone('#currStep')); i=i+1; $('#stepnum').text("Step " + i.toString()); move();  mvold=mv; mv=mv+10;})
                          
             socket.on('messageps', function(messageps) {
                 //console.log(messageps);
                 $('#prevStep').text(messageps); })
-
+            
         </script>
 
 

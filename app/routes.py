@@ -2,14 +2,12 @@ import time
 from flask import render_template, flash, redirect, url_for, request
 
 from time import sleep                                                                                                                                                                         
-
+import _thread
 from app import app, socketio
 from app.forms import IDForm, Tasker
 
+from app import oHAB
 import simplejson as json
-
-
-#turn the flask app into a socketio app
 
 
 @app.route('/',  methods=['GET', 'POST'])
@@ -36,12 +34,6 @@ def taskselect():
             return "Done B"
     return render_template('taskselect.html', title='Tasks', form=form)
  
-
-
-@app.route('/TaskA')
-def TaskA():
-    return render_template('TaskA.html', title='Task A')
-
 @socketio.on('messagecs')
 def currStepMes(messagecs):
     socketio.emit('messagecs', messagecs)
@@ -49,3 +41,11 @@ def currStepMes(messagecs):
 @socketio.on('messageps')
 def prevStepMes(messageps):
     socketio.emit('messageps', messageps)
+
+@socketio.on('rundummy')
+def rund(rundummy):
+    sleep(1)
+    print('rundummy')
+    
+    _thread.start_new_thread(oHAB.dummy, ())
+

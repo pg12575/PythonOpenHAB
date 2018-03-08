@@ -57,7 +57,7 @@ def dummy():
 
 def dummy2():
     with SocketIO('http://localhost', 5000, LoggingNamespace) as socketIO:  
-       
+        
         socketIO.emit('messagecs','Take plate from left cupboard')
         sleep(7)
         socketIO.emit('messageps','Previous Step: Take plate from left cupboard')

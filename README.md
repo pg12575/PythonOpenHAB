@@ -30,3 +30,9 @@
 
   - Using python-openhab library for now
     - documentation - https://media.readthedocs.org/pdf/python-openhab/latest/python-openhab.pdf
+
+  - HTTP authentication
+
+    - set base_url = 'http://username:password@35.177.18.86/rest'
+
+      ​

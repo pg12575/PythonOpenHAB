@@ -1,4 +1,4 @@
-#!/home/p-gupta/Documents/AssistedLivingStudio/PythonUI/myenv/bin/python
+#!/home/p-gupta/Documents/AssistedLivingStudio/PythonOpenHAB/myenv/bin/python
 
 import sys
 import getopt

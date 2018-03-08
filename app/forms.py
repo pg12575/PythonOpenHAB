@@ -10,3 +10,6 @@ class IDForm(FlaskForm):
 class Tasker(FlaskForm):
     submit1 = SubmitField('Task A')
     submit2 = SubmitField('Task B')
+
+class exitApp(FlaskForm):
+    submit3 = SubmitField('Exit')
